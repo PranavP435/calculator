@@ -1,16 +1,20 @@
 <html>
 <head>
     <title>Calculator</title>
+    <!--The CSS and Javascript Code-->
     <link href="calcss.css" rel="stylesheet">
     <script src = "calscript.js"></script>
 </head>
 <body>
     <h1 align = center>Calculator</h1>
+    <!--The calculator-->
     <div class="calculator">
+        <!--The result box where the result is displayed.-->
         <div class = "result" align = center>
             <input id = "result" type = "text" readonly = true><br><br>
         </div>
-        <!--Buttons from 0 to 9-->
+
+        <!--Buttons from 0 to 9, operations, decimal point, trig functions sin, cos, tan-->
         <div class="buttons" align = center>
                 <button class = num id = left onclick="clk('7')">7</button>
                 <button class = num id = center onclick="clk('8')">8</button>
@@ -33,8 +37,7 @@
                 <button class = op id = right onclick="clk('*')">*</button>
                 <button class = pow id = right onclick="clk('**')">x<sup>y</sup></button><br><br>
                 <button class = clear id = center onclick="clk('c')">C</button>
-                <button class = degRad id = center onclick= "changeang()">Deg</button>
-                
+                <button class = degRad id = center onclick= "changeang()">Deg</button>   
         </div>
     </div>
 </body>
