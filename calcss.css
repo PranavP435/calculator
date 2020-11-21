@@ -1,0 +1,38 @@
+*{
+    font-family: cursive !important;
+}
+button{
+    width: 60 !important;
+    padding: 10 !important;
+    border-radius: 5px !important;
+}
+#left{
+    margin-right: 10;
+}
+#right{
+    margin-left: 10;
+}
+.num{
+    color: slateblue;
+    background-color: orange;
+}
+.num:hover{
+    background-color: rgba(255, 166, 0, 0.863);
+}
+.op{
+    color:orchid;
+    background-color: lightgreen;
+}
+.clear{
+    background-color: red;
+}
+.eq{
+    color: blue;
+    background-color: greenyellow;
+}
+#result{
+    width: 280;
+    height: 40;
+    border-radius: 5px;
+    border-color: chocolate;
+}
