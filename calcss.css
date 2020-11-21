@@ -30,6 +30,9 @@ button{
     color: blue;
     background-color: greenyellow;
 }
+.degRad{
+    width:100 !important;
+}
 #result{
     width: 280;
     height: 40;

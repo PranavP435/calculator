@@ -12,6 +12,9 @@ function torad(deg){
 function clk(txt){
     txtbox = document.getElementById('result');
     if (trig.includes(txt)){ /*If a trignometric function is used*/
+        angbtn = document.getElementsByClassName('degRad')[0];
+        angbtn.style.color = 'black';
+        angbtn.disabled = true;
         if (deg){
             dup += `Math.${txt}(torad(` /*convert into rad if degree mode is on. eval() only computes in rad*/
         }
@@ -27,6 +30,7 @@ function clk(txt){
         txtbox.value = '';
         dup = '';
         trig_st = false;
+        angbtn.disabled = false;
         return;
     }
     else if (txt == '**'){/* the to the power of button is used*/
@@ -46,6 +50,7 @@ function clk(txt){
                 dup += ')';
             }
         }
+        angbtn.disabled = false;
         txtbox.value = eval(dup);/*No if statements above is triggered, a button from 0-9 or the 
                                    + - * / buttons is used*/
         dup = txtbox.value;
@@ -60,12 +65,12 @@ function clk(txt){
 /*Changes mode from Degress to Radians and vice versa*/
 function changeang(){
     ang = document.getElementsByClassName('degRad')[0];
-    if (ang.innerHTML == 'Deg'){
+    if (ang.innerHTML == '<strong>Rad</strong> | Deg'){
         deg = true;
-        ang.innerHTML = 'Rad';
+        ang.innerHTML = 'Rad | <strong>Deg</strong>';
     }
     else{
         deg = false;
-        ang.innerHTML = 'Deg';
+        ang.innerHTML = '<strong>Rad</strong> | Deg';
     }
 }
