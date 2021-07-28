@@ -11,8 +11,8 @@ function torad(deg){
 /*The call back function of all buttons in the calculator*/
 function clk(txt){
     txtbox = document.getElementById('result');
+    angbtn = document.getElementsByClassName('degRad')[0];
     if (trig.includes(txt)){ /*If a trignometric function is used*/
-        angbtn = document.getElementsByClassName('degRad')[0];
         angbtn.style.color = 'black';
         angbtn.disabled = true;
         if (deg){
