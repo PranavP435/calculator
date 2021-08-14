@@ -62,6 +62,7 @@ function clk(txt){
         }
         if (resultcalc == true){
             txtbox.value = "";
+            dup = "";
             resultcalc = false;
         }
         txtbox.value += txt;
