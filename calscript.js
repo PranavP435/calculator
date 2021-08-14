@@ -60,7 +60,7 @@ function clk(txt){
             calcdone = true;
             return;
         }
-        if (calcdone == true and !(["+","-","*","/"].includes(txt))){
+        if (calcdone == true){
             txtbox.value = "";
             dup = "";
             calcdone = false;
