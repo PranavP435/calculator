@@ -2,6 +2,7 @@ var deg = false;
 var dup = '';
 var trig_st = 0;
 var trig = ['sin','cos','tan'];
+var resultcalc = false;
 
 /*Converts degrees to radians*/
 function torad(deg){
@@ -56,9 +57,13 @@ function clk(txt){
                                     + - * / buttons is used*/
             dup = txtbox.value;
             trig_st = false;
+            resultcalc = true;
             return;
         }
-
+        if (resultcalc == true){
+            txtbox.value = "";
+            resultcalc = false;
+        }
         txtbox.value += txt;
         dup += txt
     }
