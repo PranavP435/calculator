@@ -41,7 +41,7 @@ function clk(txt){
             dup += txt;
             return;
         }
-        else if (txt == 'ans' && ans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
+        else if (txt == 'ans' && prevans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
             txtbox.value += "Ans";
             dup += prevans;
             return;
