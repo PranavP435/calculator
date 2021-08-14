@@ -3,6 +3,7 @@ var dup = '';
 var trig_st = 0;
 var trig = ['sin','cos','tan'];
 var calcdone = false;
+var prevans = "";
 
 /*Converts degrees to radians*/
 function torad(deg){
@@ -40,6 +41,10 @@ function clk(txt){
             dup += txt;
             return;
         }
+        else if (txt == 'ans' && ans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
+            txtbox.value += "Ans";
+            dup += ans;
+        }
         else if(txt == '='){/* to compute the value of the existitng expression if equals is used*/
             if (trig_st > 0){
                 if (deg){
@@ -53,14 +58,16 @@ function clk(txt){
                 }
             }
             angbtn.disabled = false;
-            txtbox.value = eval(dup);/*No if statements above is triggered, a button from 0-9 or the 
-                                    + - * / buttons is used*/
+            txtbox.value = eval(dup);
             dup = txtbox.value;
+            ans = txtbox.value;
             trig_st = false;
             calcdone = true;
             return;
         }
-        if (calcdone == true && !(["+","-","*","/"].includes(txt))){
+        /*No if statements above is triggered, a button from 0-9 or the 
+        + - * / buttons is used*/
+        if (calcdone && !(["+","-","*","/"].includes(txt))){
             txtbox.value = "";
             dup = "";
             calcdone = false;
