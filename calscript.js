@@ -74,6 +74,7 @@ function clk(txt){
         }
         txtbox.value += txt;
         dup += txt
+        calcdone=false;
     }
     catch (e){
         console.log(e);
