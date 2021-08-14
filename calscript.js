@@ -2,7 +2,7 @@ var deg = false;
 var dup = '';
 var trig_st = 0;
 var trig = ['sin','cos','tan'];
-var resultcalc = false;
+var calcdone = false;
 
 /*Converts degrees to radians*/
 function torad(deg){
@@ -57,19 +57,20 @@ function clk(txt){
                                     + - * / buttons is used*/
             dup = txtbox.value;
             trig_st = false;
-            resultcalc = true;
+            calcdone = true;
             return;
         }
-        if (resultcalc == true){
+        if (calcdone == true){
             txtbox.value = "";
             dup = "";
-            resultcalc = false;
+            calcdone = false;
         }
         txtbox.value += txt;
         dup += txt
     }
     catch (e){
         console.log(e);
+        calcdone = true;
         txtbox = document.getElementById('result');
         txtbox.value = "Error";
     }
