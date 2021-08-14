@@ -43,7 +43,7 @@ function clk(txt){
         }
         else if (txt == 'ans' && ans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
             txtbox.value += "Ans";
-            dup += ans;
+            dup += prevans;
             return;
         }
         else if(txt == '='){/* to compute the value of the existitng expression if equals is used*/
@@ -61,7 +61,7 @@ function clk(txt){
             angbtn.disabled = false;
             txtbox.value = eval(dup);
             dup = txtbox.value;
-            ans = txtbox.value;
+            prevans = txtbox.value;
             trig_st = false;
             calcdone = true;
             return;
