@@ -77,7 +77,7 @@ function clk(txt){
         }
         /*No if statements above is triggered, a button from 0-9 or the 
         + - * / buttons is used*/
-        if (calcdone && !(["+","-","*","/"].includes(txt))){
+        if (calcdone && !(["+","-","*","/"].includes(txt) && !(trig.includes(txt)))){
             txtbox.value = txt;
             dup = txt;
             calcdone = false;
