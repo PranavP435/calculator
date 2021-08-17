@@ -41,10 +41,18 @@ function clk(txt){
             dup += txt;
             return;
         }
-        else if (txt == 'ans' && prevans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
-            txtbox.value += "Ans";
-            dup += prevans;
-            return;
+        else if (txt == 'ans'){
+            if (prevans && (!(dup) || ["+","-","*","/"].includes(dup[dup.length-1]))){
+                txtbox.value += "Ans";
+                dup += prevans;
+                return;
+            }
+            else {
+                txtbox.value += "* Ans";
+                dup += `* ${prevans}`;
+                return;
+            }
+                
         }
         else if(txt == '='){/* to compute the value of the existitng expression if equals is used*/
             if (trig_st > 0){
@@ -62,6 +70,7 @@ function clk(txt){
             txtbox.value = eval(dup);
             dup = txtbox.value;
             prevans = txtbox.value;
+            document.getElementsByClassName('answer')[0].disabled = false;
             trig_st = false;
             calcdone = true;
             return;
@@ -69,8 +78,8 @@ function clk(txt){
         /*No if statements above is triggered, a button from 0-9 or the 
         + - * / buttons is used*/
         if (calcdone && !(["+","-","*","/"].includes(txt))){
-            txtbox.value = "";
-            dup = "";
+            txtbox.value = txt;
+            dup = txt;
             calcdone = false;
             return;
         }
