@@ -33,6 +33,7 @@ button{
 }
 .degRad{
     width:100 !important;
+    font-weight: normal;
 }
 #result{
     width: 280;
