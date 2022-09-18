@@ -2,4 +2,4 @@
 
 A simple calculator using JavaScript, HTML, CSS. 
 
-Use the calculator at https://catfo435.github.io/Calculator/
+Use the calculator at https://calculator.catfo.tech
